@@ -1,0 +1,272 @@
+.navhovercox {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.navhovercox::after {
+  content: "";
+  width: 100%;
+  height: 4.4px;
+  background-color: #e7e7fc;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0%;
+  transition: all 0.2s ease-in-out;
+}
+
+.navhovercox:hover {
+  color: #e7e7fc;
+  transition: all 0.2s linear;
+  text-shadow: 0 0 2px #f2f5d5;
+}
+
+.navhovercox:hover::after {
+  opacity: 100%;
+}
+
+.hero-left-wrap .hero-left-move {
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero-left-move li {
+  color: #fc6d6d;
+  list-style: none;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+
+.hero-left-move li span {
+  position: relative;
+}
+
+.hero-left-move li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #3a1051;
+  border-left: 2px solid #fc6d6d;
+  animation: type 1.5s steps(11) infinite alternate;
+}
+
+@keyframes type {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
+/* hero left side */
+.heroproducts {
+  filter: drop-shadow(0 0 1rem #2a74c8);
+}
+
+.herobeauty {
+  filter: drop-shadow(0 0 1rem #d59fac);
+  animation: herobeauty 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes herobeauty {
+  100% {
+    transform: translate(0px, 15px);
+  }
+}
+
+.herobeauty:hover {
+  animation-play-state: paused;
+}
+
+.herogameboy {
+  filter: drop-shadow(0 0 1rem #7e22da);
+  animation: herogameboy 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes herogameboy {
+  100% {
+    transform: translate(0px, 13px);
+  }
+}
+
+.herogameboy:hover {
+  animation-play-state: paused;
+}
+
+.herocloths {
+  filter: drop-shadow(0 0 1rem #98d259);
+  animation: herocloths 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes herocloths {
+  100% {
+    transform: translate(0px, 21px);
+  }
+}
+
+.herocloths:hover {
+  animation-play-state: paused;
+}
+
+.heroshoes {
+  filter: drop-shadow(0 0 1rem #667ee0);
+  animation: heroshoes 1.6s ease-in-out infinite alternate;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes heroshoes {
+  100% {
+    transform: translate(0px, 20px);
+  }
+}
+
+.heroshoes:hover {
+  animation-play-state: paused;
+}
+
+.heroproducts,
+.herobeauty,
+.herogameboy,
+.herocloths,
+.heroshoes {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Brands css */
+
+.arrow{
+    transition: all 0.3s ease-in-out;
+}
+.arrow:hover {
+  /* background: linear-gradient(90deg,rgba(58, 16, 81, 1) 0%, rgba(231, 231, 252, 0.226) 50%, rgba(58, 16, 81, 1) 100%); */
+  background: #e7e7fc79;
+}
+
+
+.tx1,
+.tx2,
+.tx3,
+.tx4,
+.tx5,
+.tx6 {
+  position: relative;
+  text-shadow: 0px 0px 10px #3a1051;
+  font-size: 400%;
+  line-height: 1.1em;
+}
+.tx1::before, .tx2::after, .tx4::after  {
+  content: "";
+  background-color: #c9c9ec;
+  position: absolute;
+  height: 90%;
+  width: 105%;
+  top: 0;
+  right: 0;
+  transition: all 1.5s ease-out;
+}
+
+
+.tx3::after, .tx5::after, .tx6::after  {
+  content: "";
+  background-color: #c9c9ec;
+  position: absolute;
+  height: 90%;
+  width: 105%;
+  top: 0;
+  left: 0;
+  transition: all 1s ease-out;
+}
+
+.visible .tx1::before,
+.visible .tx2::after,
+.visible .tx4::after,
+.visible .tx3::after,
+.visible .tx5::after,
+.visible .tx6::after {
+    width: 0%;
+}
+
+.logoimg {
+  filter: drop-shadow(0 0 0.5rem #3a1051);
+}
+
+.edgeblur {
+  background-image: linear-gradient(#e7e7fc, #c9c9ec, #e7e7fc);
+}
+
+.logoscroll {
+  animation: moveImgage 12s linear infinite forwards;
+}
+@keyframes moveImgage {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    top: -120%;
+    transform: translateY(-70%);
+  }
+}
+
+.logoblur::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 8rem;
+  background: linear-gradient(#dbdbf4, #e7e7fc00);
+  /* background: #fc6d6d; */
+  z-index: 1;
+}
+.logoblur::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  background: linear-gradient(#e7e7fc00, #e7e7fc);
+  /* background: #fc6d6d; */
+  z-index: 1;
+}
+
+
+.custom-shape-divider-top-1747143845 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1747143845 svg {
+    position: relative;
+    display: block;
+    width: calc(123% + 1.3px);
+    height: 138px;
+}
+
+.custom-shape-divider-top-1747143845 .shape-fill {
+    fill: #3A1051;
+}
+
+.footer h3{
+  font-weight: 900;
+  color: #a5a5f8;
+  font-family: "Playfair Display", serif;
+}

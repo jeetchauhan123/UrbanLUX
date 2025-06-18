@@ -1,0 +1,22 @@
+/* input[type="checkbox"] { */
+  /* ...existing styles */
+  /* display: grid; */
+  /* place-content: center; */
+/* } */
+
+/* input[type="checkbox"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #959495;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1.5);
+} */
+
+.filcat{
+    font-size: large;
+}
