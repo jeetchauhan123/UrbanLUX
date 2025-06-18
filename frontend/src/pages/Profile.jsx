@@ -32,7 +32,7 @@ const Profile = () => {
     try {
       console.log("Token from localStorage:", token);
       const res = await axios.post(
-        "http://localhost:3000/users/upload-photo",
+        "https://urbanlux.onrender.com/users/upload-photo",
         formData,
         {
           headers: {
@@ -58,7 +58,7 @@ const Profile = () => {
     try{
       console.log("Token from localStorage:", token);
       const res = await axios.patch(
-        "http://localhost:3000/users/update-profile", 
+        "https://urbanlux.onrender.com/users/update-profile", 
         userData,
         {
           headers:{
@@ -78,7 +78,7 @@ const Profile = () => {
       console.log("Token from localStorage:", token);
       console.log("inside the useeffect block")
       try{
-        const res=await axios.get("http://localhost:3000/users/me", {
+        const res=await axios.get("https://urbanlux.onrender.com/users/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

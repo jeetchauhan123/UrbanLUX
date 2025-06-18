@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 1. Create a custom axios instance
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000", // your backend URL
+  baseURL: "https://urbanlux.onrender.com", // your backend URL
 });
 
 // 2. Add response interceptor to handle token expiry

@@ -25,7 +25,7 @@ const Navbar = () => {
     useEffect(() => {
       const fetchUserData = async () => {
         try {
-            const res=await axios.get('http://localhost:3000/users/me',{
+            const res=await axios.get('https://urbanlux.onrender.com/users/me',{
                 headers:{
                     Authorization:`Bearer ${token}`,
                 },

@@ -7,7 +7,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/products/product")
+      .get("https://urbanlux.onrender.com/products/product")
       .then((res) => {
         if (res.data.success) {
           setProducts(res.data.products);
