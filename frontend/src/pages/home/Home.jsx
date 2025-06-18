@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import {isLogout} from "../../redux/loginSlice";
 import Navbar from "../components/Navbar";
 import FilterBar from "../components/FilterBar";
-import Product from "../components/product";
+import Product from "../components/Product";
 
 
 const Home = () => {
