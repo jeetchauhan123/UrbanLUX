@@ -7,7 +7,7 @@ import Register from './pages/Auth/Register'
 
 import { createBrowserRouter } from 'react-router-dom'
 import Brands from './pages/Category/Brands'
-import Profile from './pages/profile'
+import Profile from './pages/Profile'
 
 
 
