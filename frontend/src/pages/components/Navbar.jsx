@@ -60,22 +60,22 @@ const Navbar = () => {
                     <div className="hidden md:flex lighttxt h-10/12">
                         <ul className="font2 flex gap-5 text-[1.5rem] justify-center items-center h-full">
                             <li className="relative h-full">
-                                <NavLink to="/home">
+                                <NavLink to="/product/category">
                                     <span className="navhovercox py-5">Categories</span>
                                 </NavLink>
                             </li>
                             <li className="relative h-full">
-                                <NavLink to="/brands">
+                                <NavLink to="/product/brands">
                                     <span className="navhovercox py-5">Brand</span>
                                 </NavLink>
                             </li>
                             <li className="relative h-full">
-                                <NavLink to="/about">
+                                <NavLink to="/product/trending">
                                     <span className="navhovercox py-5">Trending</span>
                                 </NavLink>
                             </li>
                             <li className="relative h-full">
-                                <NavLink to="/about">
+                                <NavLink to="/product/sales">
                                     <span className="navhovercox py-5">Sales</span>
                                 </NavLink>
                             </li>
