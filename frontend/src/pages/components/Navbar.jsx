@@ -92,7 +92,7 @@ const Navbar = () => {
                         />
                         <button
                             type="button"
-                            className="text-[#3a1051] bg-[#e7e7fc] px-5 py-2 rounded-[5px] font-bold cursor-pointer hover:bg-[#d8d8f9]"
+                            className="text-[#3a1051] bg-[#e7e7fc] px-5 py-2 rounded-[5px] font-extrabold cursor-pointer hover:bg-[#d8d8f9]"
                         >
                             Search
                         </button>
@@ -125,7 +125,7 @@ const Navbar = () => {
                                 <>
                                     <button
                                         onClick={() => navigate("/log-in")}
-                                        className="border-2 border-[#e7e7fc] text-[#e7e7fc] px-4 py-2 rounded-[5px] hover:bg-[#e7e7fc] hover:text-[#3a1051] font-bold transition-all duration-200 cursor-pointer"
+                                        className="border-2 border-[#e7e7fc] text-[#e7e7fc] px-4 py-2 rounded-[5px] hover:bg-[#e7e7fc] hover:text-[#3a1051] font-extrabold transition-all duration-200 cursor-pointer"
                                     >
                                         Login
                                     </button>
