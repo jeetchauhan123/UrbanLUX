@@ -8,6 +8,7 @@ import Register from './pages/Auth/Register'
 import { createBrowserRouter } from 'react-router-dom'
 import Brands from './pages/Category/Brands'
 import Profile from './pages/Profile'
+import PageNotFound from './pages/PageNotFound'
 
 
 
@@ -48,7 +49,11 @@ const router = createBrowserRouter(
         {
             path: "/profile",
             element: <Profile />
-        }
+        },
+        {
+            path: "*",
+            element: <PageNotFound />
+        },
     ]
 )
 
