@@ -270,3 +270,24 @@
   color: #a5a5f8;
   font-family: "Playfair Display", serif;
 }
+
+/* page not pound */
+.nfoundbg {
+  background: #5a4ff0;
+  background: linear-gradient(
+    330deg,
+    rgba(90, 79, 240, 1) 0%,
+    rgba(89, 89, 240, 1) 27%,
+    rgba(0, 255, 242, 1) 100%
+  );
+  background-size: 200% 200%;
+  animation: bgmove 2s ease-in-out infinite alternate;
+}
+@keyframes bgmove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
