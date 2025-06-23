@@ -13,6 +13,7 @@ const authMiddleware = (req, res, next) => {
         return res.status(401).json({message: "Authorization header missing"})
     }
 
+    console.log("test1");
     const token = authHeader.split(" ")[1];
 
     if(!token){
@@ -20,10 +21,13 @@ const authMiddleware = (req, res, next) => {
             message:"no token provided"
         });
     }
+    console.log("test2");
 
     try{
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        console.log("test3");
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         console.log("decoded:", decoded);
+        console.log("test4");
         req.user = decoded; // You can access req.user.id later
         next();
     }
