@@ -5,17 +5,17 @@ import { isLogout } from "../../redux/loginSlice";
 import axios from "axios";
 
 const Navbar = () => {
-    const [imageLink, setImageLink]=useState({
-        image:"",
+    const [imageLink, setImageLink] = useState({
+        image: "",
     });
-    
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(
         (state) => state.userData.isAuthenticated
     );
 
-    const token=localStorage.getItem('token');
+    const token = localStorage.getItem("token");
 
     const handleLogout = () => {
         dispatch(isLogout());
@@ -23,27 +23,28 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-      const fetchUserData = async () => {
-        try {
-            const res=await axios.get('https://urbanlux.onrender.com/users/me',{
-                headers:{
-                    Authorization:`Bearer ${token}`,
-                },
-            });
-            setImageLink({image:res.data.image})
-        } catch (error) {
-            console.error("semething went wrong: ", error);
-        }
-      };
-      fetchUserData();
-    }, [])
-    
+        const fetchUserData = async () => {
+            try {
+                const res = await axios.get("https://urbanlux.onrender.com/users/me", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setImageLink({ image: res.data.image });
+            } catch (error) {
+                localStorage.removeItem("token");
+                alert("Session expired. Please login again.");
+                window.location.href = "/log-in";
+                console.error("useeffect error in navbar: ", error);
+            }
+        };
+        fetchUserData();
+    }, []);
 
     return (
         <div>
             <nav className=" h-[10vh] w-full bg-[#3a1051] flex justify-center items-center">
                 <div className="w-11/12 flex justify-between items-center">
-
                     {/* logo icon */}
                     <div className="flex items-center h-full gap-3 rounded-[5px] ">
                         <NavLink to={"/home"} className="">
@@ -102,19 +103,19 @@ const Navbar = () => {
                     <div className="flex flex-row items-center font2 gap-4">
                         {/* wishlist icon */}
                         <NavLink to="/wishlist">
-                            <img 
-                                src="./wishlist.png" 
-                                alt="" 
-                                title="Wishlist" 
+                            <img
+                                src="./wishlist.png"
+                                alt=""
+                                title="Wishlist"
                                 className="h-8 w-8 cursor-pointer hover:scale-110 transition-transform duration-200"
                             />
                         </NavLink>
                         {/* cart icon */}
                         <NavLink to="/cart">
-                            <img 
-                                src="./cart.png" 
-                                alt="Cart" 
-                                title="Cart" 
+                            <img
+                                src="./cart.png"
+                                alt="Cart"
+                                title="Cart"
                                 className="h-8 w-8 cursor-pointer hover:scale-110 transition-transform duration-200"
                             />
                         </NavLink>
@@ -145,7 +146,12 @@ const Navbar = () => {
                                         Logout
                                     </button>
                                     <button onClick={() => navigate("/profile")}>
-                                        <img src={imageLink.image} alt="account" title="Profile" className="h-10 cursor-pointer rounded-[50%]"/>
+                                        <img
+                                            src={imageLink.image}
+                                            alt="account"
+                                            title="Profile"
+                                            className="h-10 cursor-pointer rounded-[50%]"
+                                        />
                                     </button>
                                 </div>
                             )}
