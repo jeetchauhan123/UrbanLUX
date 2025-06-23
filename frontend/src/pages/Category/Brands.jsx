@@ -1,13 +1,17 @@
-import React from 'react'
-import InProgress from '../components/InProgress'
+import React from "react";
+import InProgress from "../components/InProgress";
+import Navbar from "../components/Navbar";
+import FilterBar from "../components/FilterBar";
 
 const Brands = () => {
   return (
     <div>
-        <p>Brands page</p>
-        <InProgress />
+      <Navbar />
+      <FilterBar />
+      <p>Brands page</p>
+      <InProgress />
     </div>
-  )
-}
+  );
+};
 
-export default Brands
+export default Brands;
