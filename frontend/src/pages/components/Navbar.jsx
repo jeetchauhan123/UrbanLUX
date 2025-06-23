@@ -24,6 +24,11 @@ const Navbar = () => {
     };
 
     useEffect(() => {
+        if (!token) {
+            console.log("No token, not fetching user data");
+            return;
+        }
+
         const fetchUserData = async () => {
             try {
                 const res = await axios.get("https://urbanlux.onrender.com/users/me", {
