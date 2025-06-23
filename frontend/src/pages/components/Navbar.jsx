@@ -34,7 +34,12 @@ const Navbar = () => {
             } catch (error) {
                 localStorage.removeItem("token");
                 alert("Session expired. Please login again.");
-                window.location.href = "/log-in";
+                const protectedRoutes = ["/profile", "/dashboard", "/users", "/settings"];
+                const currentPath = window.location.pathname;
+
+                if (protectedRoutes.includes(currentPath)) {
+                    window.location.href = "/log-in";
+                }
                 console.error("useeffect error in navbar: ", error);
             }
         };
