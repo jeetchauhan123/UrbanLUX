@@ -34,7 +34,6 @@ const Navbar = () => {
                 setImageLink({ image: res.data.image });
             } catch (error) {
                 localStorage.removeItem("token");
-                alert("Session expired. Please login again.");
                 console.error("useeffect error in navbar: ", error);
             }
         };
