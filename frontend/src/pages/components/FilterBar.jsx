@@ -4,7 +4,7 @@ import '../../styles/components.css';
 
 const FilterBar = () => {
   return (
-    <div className='w-9/12 flex flex-col gap-5 my-5 '>
+    <div className='w-9/12 flex flex-col gap-5 my-5'>
         <h3 className='text-3xl'>Filters</h3>
         
         {/* price range filter */}

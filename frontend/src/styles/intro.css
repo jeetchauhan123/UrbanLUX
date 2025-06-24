@@ -147,17 +147,15 @@
   overflow: hidden;
 }
 
-
 /* Brands css */
 
-.arrow{
-    transition: all 0.3s ease-in-out;
+.arrow {
+  transition: all 0.3s ease-in-out;
 }
 .arrow:hover {
   /* background: linear-gradient(90deg,rgba(58, 16, 81, 1) 0%, rgba(231, 231, 252, 0.226) 50%, rgba(58, 16, 81, 1) 100%); */
   background: #e7e7fc79;
 }
-
 
 .tx1,
 .tx2,
@@ -170,7 +168,9 @@
   font-size: 400%;
   line-height: 1.1em;
 }
-.tx1::before, .tx2::after, .tx4::after  {
+.tx1::before,
+.tx2::after,
+.tx4::after {
   content: "";
   background-color: #c9c9ec;
   position: absolute;
@@ -181,8 +181,9 @@
   transition: all 1.5s ease-out;
 }
 
-
-.tx3::after, .tx5::after, .tx6::after  {
+.tx3::after,
+.tx5::after,
+.tx6::after {
   content: "";
   background-color: #c9c9ec;
   position: absolute;
@@ -199,7 +200,7 @@
 .visible .tx3::after,
 .visible .tx5::after,
 .visible .tx6::after {
-    width: 0%;
+  width: 0%;
 }
 
 .logoimg {
@@ -223,7 +224,7 @@
   }
 }
 
-.logoblur::before{
+.logoblur::before {
   content: "";
   position: absolute;
   top: 0;
@@ -233,7 +234,7 @@
   /* background: #fc6d6d; */
   z-index: 1;
 }
-.logoblur::after{
+.logoblur::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -244,28 +245,27 @@
   z-index: 1;
 }
 
-
 .custom-shape-divider-top-1747143845 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .custom-shape-divider-top-1747143845 svg {
-    position: relative;
-    display: block;
-    width: calc(123% + 1.3px);
-    height: 138px;
+  position: relative;
+  display: block;
+  width: calc(123% + 1.3px);
+  height: 138px;
 }
 
 .custom-shape-divider-top-1747143845 .shape-fill {
-    fill: #3A1051;
+  fill: #3a1051;
 }
 
-.footer h3{
+.footer h3 {
   font-weight: 900;
   color: #a5a5f8;
   font-family: "Playfair Display", serif;
