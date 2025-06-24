@@ -53,7 +53,7 @@ const Navbar = () => {
                     <div className="flex items-center h-full gap-3 rounded-[5px] ">
                         <NavLink to={"/home"} className="">
                             <img
-                                src="./logo/light-nobg.png"
+                                src="/./logo/light-nobg.png"
                                 alt="Light_Close"
                                 className="h-18 rounded-[5px]"
                             />
@@ -108,7 +108,7 @@ const Navbar = () => {
                         {/* wishlist icon */}
                         <NavLink to="/wishlist">
                             <img
-                                src="./wishlist.png"
+                                src="/./wishlist.png"
                                 alt=""
                                 title="Wishlist"
                                 className="h-8 w-8 cursor-pointer hover:scale-110 transition-transform duration-200"
@@ -117,7 +117,7 @@ const Navbar = () => {
                         {/* cart icon */}
                         <NavLink to="/cart">
                             <img
-                                src="./cart.png"
+                                src="/./cart.png"
                                 alt="Cart"
                                 title="Cart"
                                 className="h-8 w-8 cursor-pointer hover:scale-110 transition-transform duration-200"
