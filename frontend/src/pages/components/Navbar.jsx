@@ -84,6 +84,11 @@ const Navbar = () => {
                                     <span className="navhovercox py-5">Sales</span>
                                 </NavLink>
                             </li>
+                            <li className="relative h-full">
+                                <NavLink to="/about">
+                                    <span className="navhovercox py-5">About</span>
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
 
