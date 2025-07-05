@@ -8,9 +8,8 @@ const Category = () => {
     <div>
       <Navbar />
       <div className="w-full flex flex-row">
-        <div className="max-w-[15%] w-full flex justify-center m-2 bg-white shadow-lg rounded-lg">
-          <FilterBar />
-        </div>
+        <FilterBar />
+
         <div className="w-full h-150 mr-4">
           <InProgress />
         </div>
