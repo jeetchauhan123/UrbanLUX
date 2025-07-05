@@ -8,7 +8,7 @@ body {
   background-color: #e7e7fc;
   box-sizing: border-box;
   /* overflow: hidden; */
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 /* :root {
