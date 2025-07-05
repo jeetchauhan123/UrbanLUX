@@ -3,6 +3,7 @@ const connectDB = require('./db');
 const cors = require('cors');
 const auth = require('./routes/auth');
 const product = require('./routes/product');
+const review = require('./routes/review.js')
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(cors({
 
 app.use('/users', auth);
 app.use('/products', product);
+app.use('/review', review)
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

@@ -104,7 +104,7 @@ const Profile = () => {
       <Navbar />
       <div className="flex flex-row justify-center">
         {/* Profile Picture Upload */}
-        <div className="max-w-[20%] w-full flex flex-col justify-center items-center p-10 m-2 mt-10 bg-blue-200">
+        <div className="max-w-[20%] w-full flex flex-col justify-center items-center p-10 m-2 mt-10 bg-[#d5d5f4] shadow-[0_0_40px_-20px_#7070e5]">
           <img
             src={userData.image}
             alt="User"

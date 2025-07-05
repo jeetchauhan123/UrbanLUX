@@ -13,6 +13,11 @@ const UserSchema = new Schema({
         maxlength: 15,
         default: ''
     },
+    age:{
+        type:Number,
+        required: false,
+        default: 0,
+    },
     address: {
         type: String,
         required: false,
