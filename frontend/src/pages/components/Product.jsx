@@ -17,9 +17,9 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 p-4">
+    <div className="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
       {products.map((product) => (
-        <div key={product._id} className="bg-white rounded shadow-[0_0_10px_rgba(0,0,0,0.3)] hover:scale-105 transition-transform duration-300">
+        <div key={product._id} className="bg-[#d5d5f4] rounded shadow-[0_0_10px_rgba(0,0,0,0.3)] hover:scale-105 transition-transform duration-300">
         <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded" />
           <div className="p-4">
             <h2 className="text-xl font-bold">{product.name}</h2>

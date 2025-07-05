@@ -333,6 +333,11 @@ const AboutUs = () => {
             <div className="h-1 w-8 my-4 bg-[#3a1051] rounded-full"></div>
             <h2 className="font4 text-3xl font-normal">UrbanLUX</h2>
             <p className="font2 italic">Go Urban. Go Lux</p>
+            <div>
+              <p>Note: The Backend Requires time to reactive as the backend is hosted on render and it stops the project after inactivity</p>
+              <p>The product images are taken from <a href="https://picsum.photos/">"Lorem Picsum"</a></p>
+              The data is generated from <a href="https://www.reactbd.com/tools/json-generator">"ReactBD"</a>
+            </div>
           </section>
 
           {/* Skills used in the project */}
