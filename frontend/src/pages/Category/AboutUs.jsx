@@ -47,7 +47,7 @@ const AboutUs = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/review/review",
+        "https://urbanlux.onrender.com/review/review",
         ReviewData
       );
       if (res.data.success) {
