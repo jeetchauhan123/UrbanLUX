@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
 
   return (
-    <div className='box-border overflow-hidden'>
+    <div className='box-border'>
       <RouterProvider router={router} />
       <ToastContainer position="top-right" />
     </div>
