@@ -8,7 +8,7 @@ router.get('/product', async (req, res) => {
     try{
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 12;
-        const skip = (start - 1) * limit;
+        const skip = (page - 1) * limit;
         
         const totalProducts = await ProductModel.countDocuments();
         const products = await ProductModel.find().skip(skip).limit(limit);
