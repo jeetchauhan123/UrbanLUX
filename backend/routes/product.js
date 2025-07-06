@@ -6,7 +6,7 @@ const router = express.Router();
 // getting all products
 router.get('/product', async (req, res) => {
     try{
-        const page = parseInt(req.query.page) || 1;
+        const page = Math.max(parseInt(req.query.page) || 1, 1);
         const limit = parseInt(req.query.limit) || 12;
         const skip = (page - 1) * limit;
         
@@ -22,6 +22,7 @@ router.get('/product', async (req, res) => {
         });
     }
     catch (error) {
+        console.error("❌ Error in /product route:", error);
         res.status(500).json({
             success: false,
             message: error.message
