@@ -57,7 +57,7 @@ const Product = () => {
           onClick={() => handlePageClick(i)}
           disabled={i === page}
           className={`px-3 py-1 rounded-md mx-1 ${
-            i === page ? "bg-purple-800 text-white" : "bg-gray-200"
+            i === page ? "bg-purple-800 text-white" : "bg-[#d5d5f4]"
           }`}
         >
           {i}
@@ -113,7 +113,7 @@ const Product = () => {
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={page === 1}
-          className="px-3 py-1 mx-1 bg-gray-200 rounded disabled:opacity-50"
+          className="px-3 py-1 mx-1 bg-[#d5d5f4] rounded disabled:opacity-50"
         >
           Previous
         </button>
@@ -123,7 +123,7 @@ const Product = () => {
         <button
           onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={page === totalPages}
-          className="px-3 py-1 mx-1 bg-gray-200 rounded disabled:opacity-50"
+          className="px-3 py-1 mx-1 bg-[#d5d5f4] rounded disabled:opacity-50"
         >
           Next
         </button>
