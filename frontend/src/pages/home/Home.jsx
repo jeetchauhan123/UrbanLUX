@@ -10,7 +10,7 @@ const Home = () => {
       <Navbar />
       <div className="w-full flex flex-row">
         <FilterBar />
-        <div className="w-full h-150 mr-4">
+        <div className="w-full h-fit mr-4">
           <Product />
         </div>
       </div>
