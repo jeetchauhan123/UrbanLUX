@@ -5,7 +5,8 @@ const ProductSchema = new Schema({
     name: {
         type: String,
         required: true,
-        maxlength: 100
+        maxlength: 100,
+        trim: true,
     },
     price: {
         type: Number,
@@ -20,7 +21,25 @@ const ProductSchema = new Schema({
     category: {
         type: String,
         required: true,
-        maxlength: 50
+        maxlength: 50,
+        lowercase: true,
+        trim: true,
+    },
+    subCategory: {
+        type: String,
+        required: false,
+        trim: true,
+        lowercase: true, // "men", "women", "kids"
+    },
+    type: {
+        type: String,
+        required: false,
+        trim: true,
+        lowercase: true, // "shirt", "pant"
+    },
+    inStock: {
+        type: Boolean,
+        default: true,
     },
     image: {
         type: String,
