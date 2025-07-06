@@ -27,7 +27,7 @@ router.get('/product', async (req, res) => {
             message: error.message
         });
     }
-})
+});
 
 // adding a new product
 router.post('/product',async(req, res) => {
