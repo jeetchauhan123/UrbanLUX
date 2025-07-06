@@ -6,7 +6,7 @@ const router = express.Router();
 // getting all products
 router.get('/product', async (req, res) => {
     try{
-        const start = parseInt(req.query.page) || 1;
+        const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 12;
         const skip = (start - 1) * limit;
         

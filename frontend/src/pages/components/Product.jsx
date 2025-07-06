@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
-  const [start, setStart] = useState(1);
+  const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
   const fetchProducts = async (pageNumber = 1) => {
