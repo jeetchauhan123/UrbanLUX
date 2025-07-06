@@ -9,7 +9,6 @@ const Brands = () => {
       <Navbar />
       <div className="w-full flex flex-row">
         <FilterBar />
-
         <div className="w-full h-150 mr-4">
           <InProgress />
         </div>
