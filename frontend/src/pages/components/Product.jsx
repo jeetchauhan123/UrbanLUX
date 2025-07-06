@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+
+  const productSectionRef = useRef(null);
 
   const fetchProducts = async (pageNumber = 1) => {
     try {
@@ -77,7 +79,7 @@ const Product = () => {
   // }, []);
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div ref={productSectionRef} className="w-11/12 mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {products.map((product) => (
           <div
