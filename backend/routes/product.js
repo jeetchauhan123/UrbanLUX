@@ -46,6 +46,6 @@ router.post('/product',async(req, res) => {
             message: error.message
         });
     }
-})
+});
 
 module.exports = router;
