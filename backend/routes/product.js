@@ -6,10 +6,19 @@ const router = express.Router();
 // getting all products
 router.get('/product', async (req, res) => {
     try{
-        const products = await ProductModel.find();
+        const start = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 12;
+        const skip = (start - 1) * limit;
+        
+        const totalProducts = await ProductModel.countDocuments();
+        const products = await ProductModel.find().skip(skip).limit(limit);
+
         res.status(200).json({
             success: true,
-            products
+            products,
+            currentPage: page,
+            totalPages: Math.ceil(totalProducts / limit),
+            totalProducts,
         });
     }
     catch (error) {
