@@ -17,6 +17,9 @@ const Product = () => {
         setProducts(res.data.products);
         setPage(res.data.currentPage);
         setTotalPages(res.data.totalPages);
+        if (productSectionRef.current) {
+          productSectionRef.current.scrollIntoView({ behavior: "smooth" });
+        }
       }
     } catch (err) {
       console.error("Error fetching products:", err);
