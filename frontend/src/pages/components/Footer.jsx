@@ -8,7 +8,7 @@ const Footer = () => {
             <section className="footer lighttxt relative ">
                 {/* Upper Footer */}
                 <div className="w-full bg-[#3a1051] flex justify-center items-center pt-7 pb-4">
-                    <div className="w-10/12 flex flex-row flex-wrap gap-y-6 justify-evenly">
+                    <div className="w-10/12 flex flex-row flex-wrap gap-y-10 justify-evenly">
                         {/* Email Part */}
                         <div className="fit sm:w-40 lg:w-fit flex flex-col gap-2">
                             <p className="flex flex-row justify-center items-center gap-2">
