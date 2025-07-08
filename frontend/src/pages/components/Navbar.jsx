@@ -48,18 +48,23 @@ const Navbar = () => {
     return (
         <div>
             {/* navbar */}
-            <nav className="flex flex-row justify-between w-[100vw] sm:hidden bg-[#3a1051]">
-                <div className="flex flex-row  justify-center items-center h-full gap-3 rounded-[5px] ">
+            <nav  className="flex flex-row justify-around items-center w-[100vw] sm:hidden bg-[#3a1051]">
+                <div  className="flex items-center justify-center h-full rounded-[5px] ">
                     <NavLink to={"/home"} className="">
                         <img
                             src="/./logo/light-nobg.png"
                             alt="Dark"
-                            className="h-15 rounded-[5px] m-5"
+                            className="h-15 rounded-[5px] my-3"
                         />
                     </NavLink>
+                    <a href="">
+                        <h1 className="text-amber-300 font-bold text-4xl font1 text-shadow-[2px_2px_30px]  text-shadow-amber-200">
+                            URBANLUX
+                        </h1>
+                    </a>
                     {/* <img src="./logo/image-Photoroom (1).png" alt="" /> */}
                 </div>
-                <button className="mx-5 my-auto px-4 py-2 text-2xl text-[#e7e7fc] border rounded-lg">☰</button>
+                <button className="px-3.5 py-1.5 text-xl text-[#e7e7fc] border rounded-lg">☰</button>
             </nav>
 
             {/* tab/laptop view */}
@@ -118,7 +123,7 @@ const Navbar = () => {
                         />
                         <button
                             type="button"
-                            className="text-[#3a1051] bg-[#e7e7fc] px-2 py-1.5 lg:px-5 lg:py-2 rounded-[5px] font-extrabold cursor-pointer hover:bg-[#d8d8f9] hidden md:block text-sm "
+                            className="text-[#3a1051] bg-[#e7e7fc] px-2 py-1.5 lg:px-5 lg:py-2 rounded-[5px] font-extrabold cursor-pointer hover:bg-[#d8d8f9] hidden md:block text-sm lg:text-base"
                         >
                             Search
                         </button>
