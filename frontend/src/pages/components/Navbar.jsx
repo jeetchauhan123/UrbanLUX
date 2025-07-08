@@ -5,6 +5,7 @@ import { isLogout } from "../../redux/loginSlice";
 import axios from "axios";
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [imageLink, setImageLink] = useState({
         image: "",
     });
@@ -48,8 +49,8 @@ const Navbar = () => {
     return (
         <div>
             {/* navbar */}
-            <nav  className="flex flex-row justify-around items-center w-[100vw] sm:hidden bg-[#3a1051]">
-                <div  className="flex items-center justify-center h-full rounded-[5px] ">
+            <nav className="flex flex-row justify-around items-center w-[100vw] sm:hidden bg-[#3a1051]">
+                <div className="flex items-center justify-center h-full rounded-[5px] ">
                     <NavLink to={"/home"} className="">
                         <img
                             src="/./logo/light-nobg.png"
@@ -64,7 +65,9 @@ const Navbar = () => {
                     </a>
                     {/* <img src="./logo/image-Photoroom (1).png" alt="" /> */}
                 </div>
-                <button className="px-3.5 py-1.5 text-xl text-[#e7e7fc] border rounded-lg">☰</button>
+                <button className="px-3.5 py-1.5 text-xl text-[#e7e7fc] border rounded-lg" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    ☰
+                </button>
             </nav>
 
             {/* tab/laptop view */}
@@ -76,7 +79,7 @@ const Navbar = () => {
                             <img
                                 src="/./logo/light-nobg.png"
                                 alt="Light_Close"
-                                className="h-15 lg:h-18 rounded-[5px]"
+                                className="h-15 md:h-13 lg:h-18 rounded-[5px]"
                             />
                         </NavLink>
                         {/* <img src="./logo/image-Photoroom (1).png" alt="" /> */}
@@ -84,7 +87,7 @@ const Navbar = () => {
 
                     {/* navigation links */}
                     <div className="hidden sm:flex lighttxt h-10/12">
-                        <ul className="font2 flex gap-3 lg:gap-5 text-[1.3rem] md:text-[1.3rem] lg:text-[1.5rem] justify-center items-center h-full">
+                        <ul className="font2 flex gap-2 lg:gap-5 text-[1.3rem] md:text-[1.3rem] lg:text-[1.5rem] justify-center items-center h-full">
                             <li className="relative h-full">
                                 <NavLink to="/product/category">
                                     <span className="navhovercox py-5">Categories</span>
@@ -119,11 +122,11 @@ const Navbar = () => {
                             type="text"
                             name="search"
                             id="search"
-                            className="bg-white rounded-md h-8 lg:h-10 w-30 lg:w-50 py-2 px-2 hidden md:block text-sm"
+                            className="bg-white rounded-md h-8 lg:h-8 w-30 lg:w-45 py-2 px-2 hidden md:block text-sm"
                         />
                         <button
                             type="button"
-                            className="text-[#3a1051] bg-[#e7e7fc] px-2 py-1.5 lg:px-5 lg:py-2 rounded-[5px] font-extrabold cursor-pointer hover:bg-[#d8d8f9] hidden md:block text-sm lg:text-base"
+                            className="text-[#3a1051] bg-[#e7e7fc] px-2 py-1.5 lg:px-4 lg:py-1.6 rounded-[5px] font-extrabold cursor-pointer hover:bg-[#d8d8f9] hidden md:block text-sm lg:text-sm"
                         >
                             Search
                         </button>
@@ -168,10 +171,10 @@ const Navbar = () => {
                                     </button> */}
                                 </>
                             ) : (
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-1.5 lg:gap-3">
                                     <button
                                         onClick={handleLogout}
-                                        className="bg-red-500 text-white px-3 py-2 rounded-[5px] hover:bg-red-600 font-extrabold transition-all duration-200 cursor-pointer"
+                                        className="bg-red-500 text-white px-3 py-1.5 md:px-2 md:py-2 lg:px-3 lg:py-2 rounded-[5px] hover:bg-red-600 font-extrabold transition-all duration-200 cursor-pointer md:text-sm lg:text-base"
                                     >
                                         Logout
                                     </button>
@@ -180,7 +183,7 @@ const Navbar = () => {
                                             src={imageLink.image}
                                             alt="account"
                                             title="Profile"
-                                            className="h-10 cursor-pointer rounded-[50%] max-h-[50px]"
+                                            className="h-10 min-h-10 w-12 cursor-pointer rounded-[50%]"
                                         />
                                     </button>
                                 </div>
@@ -189,6 +192,62 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+            {isMenuOpen && (
+                <div className="sm:hidden flex flex-col items-start gap-4 px-6 py-4 bg-[#3a1051] text-white font2 text-lg transition-all duration-300">
+                    <NavLink to="/home" onClick={() => setIsMenuOpen(false)}>
+                        Home
+                    </NavLink>
+                    <NavLink to="/product/category" onClick={() => setIsMenuOpen(false)}>
+                        Categories
+                    </NavLink>
+                    <NavLink to="/product/brands" onClick={() => setIsMenuOpen(false)}>
+                        Brand
+                    </NavLink>
+                    <NavLink to="/product/trending" onClick={() => setIsMenuOpen(false)}>
+                        Trending
+                    </NavLink>
+                    <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
+                        About
+                    </NavLink>
+                    <hr className="border-white w-full" />
+                    {/* Authentication Buttons */}
+                    {!isAuthenticated ? (
+                        <button
+                            onClick={() => {
+                                navigate("/log-in");
+                                setIsMenuOpen(false);
+                            }}
+                            className="border-2 border-white px-3 py-1 rounded"
+                        >
+                            Login
+                        </button>
+                    ) : (
+                        <div className="flex items-center gap-3">
+                            <button
+                                onClick={() => {
+                                    handleLogout();
+                                    setIsMenuOpen(false);
+                                }}
+                                className="bg-red-500 text-white px-3 py-2 rounded"
+                            >
+                                Logout
+                            </button>
+                            <button
+                                onClick={() => {
+                                    navigate("/profile");
+                                    setIsMenuOpen(false);
+                                }}
+                            >
+                                <img
+                                    src={imageLink.image}
+                                    alt="account"
+                                    className="h-10 w-12 rounded-[50%]"
+                                />
+                            </button>
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
     );
 };
