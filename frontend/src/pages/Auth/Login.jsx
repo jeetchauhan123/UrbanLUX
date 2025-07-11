@@ -99,7 +99,7 @@ const Login = () => {
           <img
             src="../logo/dark-nobg.png"
             alt="darklogo"
-            className="brandlogo z-100 h-20 w-23 sm:h-25 sm:w-28 absolute top-4 right-5 md:left-5"
+            className="brandlogo z-100 h-20 w-23 sm:h-25 sm:w-28 absolute top-4 right-5 md:left-5 md:right-auto"
           />
         </Link>
         
