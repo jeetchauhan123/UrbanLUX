@@ -36,71 +36,73 @@ const Intro = () => {
     return (
         <div className="box-border overflow-hidden">
             {/* navbar */}
-            <nav className="flex justify-between items-center p-4 h-[12vh] bg-[#3a1051]">
-                <div className="flex items-center h-full gap-3 rounded-[5px] px-5">
-                    <a href="" className="h-full">
-                        <img
-                            src="./logo/light-nobg.png"
-                            alt="Light_Close"
-                            className="h-full rounded-[5px]"
-                        />
-                    </a>
-                    {/* <img src="./logo/image-Photoroom (1).png" alt="" /> */}
-                    <a href="">
-                        <h1 className="text-amber-300 font-bold text-4xl font1 text-shadow-[2px_2px_30px]  text-shadow-amber-200">
-                            URBANLUX
-                        </h1>
-                    </a>
-                </div>
-                <div className="hidden md:flex lighttxt h-10/12">
-                    <ul className="font2 flex gap-5 text-[1.5rem] justify-center items-center h-full">
-                        <li className="relative h-full">
-                            <NavLink to="/home">
-                                <span className="navhovercox py-5">Home</span>
-                            </NavLink>
-                        </li>
-                        <li className="relative h-full">
-                            <NavLink to="/products">
-                                <span className="navhovercox py-5">Products</span>
-                            </NavLink>
-                        </li>
-                        <li className="relative h-full">
-                            <NavLink to="/about">
-                                <span className="navhovercox py-5">About</span>
-                            </NavLink>
-                        </li>
-                    </ul>
-                </div>
-                <div className="lighttxt font2 flex gap-4 mr-10">
-                    <button
-                        onClick={() => navigate("/log-in")}
-                        className="border-2 border-[#e7e7fc] text-[#e7e7fc] px-5 py-2 rounded-[5px] hover:bg-[#e7e7fc] hover:text-[#3a1051] font-bold transition-all duration-200"
-                    >
-                        Login
-                    </button>
-                    <button
-                        onClick={() => navigate("/sign-up")}
-                        className="bg-[#e7e7fc] text-[#3a1051] px-5 py-2 rounded-[5px] hover:bg-[#3a1051] hover:text-[#e7e7fc] font-bold transition-all duration-200"
-                    >
-                        Sign Up
-                    </button>
+            <nav className="flex justify-center items-center w-[100vw] bg-[#3a1051]">
+                <div className="flex justify-between items-center w-11/12 h-[12vh]">
+                    <div className="flex items-center h-full gap-3 rounded-[5px] px-5">
+                        <NavLink to="/home" className="h-full flex items-center justify-center">
+                            <img
+                                src="./logo/light-nobg.png"
+                                alt="Light_Close"
+                                className="h-[85%] lg:h-full"
+                            />
+                        </NavLink>
+                        {/* <img src="./logo/image-Photoroom (1).png" alt="" /> */}
+                        <NavLink to="/home" className={"hidden lg:block"}>
+                            <h1 className="text-amber-300 font-bold text-4xl font1 text-shadow-[2px_2px_30px]  text-shadow-amber-200">
+                                URBANLUX
+                            </h1>
+                        </NavLink>
+                    </div>
+                    <div className="hidden md:flex lighttxt">
+                        <ul className="font2 flex gap-5 text-[1.5rem] justify-center items-center h-full">
+                            <li className="relative h-full">
+                                <NavLink to="/home">
+                                    <span className="navhovercox py-5">Home</span>
+                                </NavLink>
+                            </li>
+                            <li className="relative h-full">
+                                <NavLink to="/products">
+                                    <span className="navhovercox py-5">Products</span>
+                                </NavLink>
+                            </li>
+                            <li className="relative h-full">
+                                <NavLink to="/about">
+                                    <span className="navhovercox py-5">About</span>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="lighttxt font2 flex f gap-2 sm:gap-4">
+                        <button
+                            onClick={() => navigate("/log-in")}
+                            className="border-2 border-[#e7e7fc] text-[#e7e7fc] text-sm sm:text-base px-3 md:px-5 py-1 sm:py-2 rounded-[5px] hover:bg-[#e7e7fc] hover:text-[#3a1051] font-bold transition-all duration-200"
+                        >
+                            Login
+                        </button>
+                        <button
+                            onClick={() => navigate("/sign-up")}
+                            className="bg-[#e7e7fc] text-[#3a1051] text-sm sm:text-base px-3 md:px-5 py-1 sm:py-2 rounded-[5px] hover:bg-[#3a1051] hover:text-[#e7e7fc] font-bold transition-all duration-200"
+                        >
+                            Sign Up
+                        </button>
+                    </div>
                 </div>
             </nav>
 
             {/* hero section */}
-            <section className="bg-[#3a1051] w-full flex justify-center items-center relative">
-                <div className="flex justify-between items-center w-10/12 gap-5">
+            <section className="bg-[#3a1051] w-full flex justify-center items-center relative -mt-1 pt-5">
+                <div className="flex justify-between items-center w-11/12 lg:w-10/12 ">
                     {/* left part */}
-                    <div className="hero-left-con font2 w-[50%]">
-                        <div className="hero-left-fix inline-block text-[#e7e7fc] text-[3.5rem] font-[500]">
+                    <div className="hero-left-con font2 w-[50%] sm:w-[55%]">
+                        <div className="inline-block text-[#e7e7fc] text-[1.4rem] sm:text-[2.5rem] md:vtext-[3rem] lg:text-[3.5rem] font-[500]">
                             Wanna
                         </div>{" "}
                         <br />
-                        <div className="hero-left-wrap inline-flex">
-                            <div className="hero-left-fix inline-block text-[#e7e7fc] text-[3.5rem] font-[500]">
-                                Purchase:{" "}
+                        <div className="hero-left-wrap flex flex-col">
+                            <div className="inline-block text-[#e7e7fc] text-[1.4rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] font-[500]">
+                                Purchase:
                             </div>
-                            <ul className="hero-left-move">
+                            <ul className="hero-left-move text-[1.4rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] font-[500]">
                                 <li>
                                     <span>Kitchenware?</span>
                                 </li>
@@ -117,36 +119,36 @@ const Intro = () => {
                         </div>
                     </div>
                     {/* right part */}
-                    <div className="relative w-[50%] h-[25rem]">
+                    <div className="relative w-[55%] h-[15rem] sm:h-[20rem] md:h-[20rem] lg:h-[25rem]">
                         <img
                             src="./products.png"
                             alt="products"
-                            className="heroproducts absolute top-0 left-0 h-[120%]"
+                            className="heroproducts absolute top-0 min-h-50 sm:h-[80%] md:h-[100%] lg:h-[120%] m-auto"
                         />
                         <img
                             src="./beauty.png"
                             alt="beauty"
-                            className="herobeauty absolute top-0 left-10 h-[60%]"
+                            className="herobeauty absolute top-0 left-8 h-[30%] sm:h-[40%] md:h-[50%] lg:h-[60%]"
                         />
                         <img
                             src="./gameboy.png"
                             alt="gameboy"
-                            className="herogameboy absolute top-10 -right-5 h-[50%]"
+                            className="herogameboy absolute top-10 right-5 sm:-right-5 h-[25%] sm:h-[30%] md:h-[40%] lg:h-[50%]"
                         />
                         <img
                             src="./cloths.png"
                             alt="cloths"
-                            className="herocloths absolute -bottom-10 -left-10 h-[50%]"
+                            className="herocloths absolute bottom-15 sm:bottom-20 md:bottom-0 lg:-bottom-20 left-0 sm:-left-10 h-[25%] sm:h-[30%] md:h-[40%] lg:h-[50%]"
                         />
                         <img
                             src="./shoes.png"
                             alt="shoes"
-                            className="heroshoes absolute -bottom-20 right-0 h-[50%]"
+                            className="heroshoes absolute bottom-15 sm:bottom-15 md:-bottom-5 lg:-bottom-15 right-0 h-[25%] sm:h-[30%] md:h-[40%] lg:h-[50%]"
                         />
                     </div>
                 </div>
                 <div
-                    className="absolute -bottom-75 -z-[1] bg-[#3a1051]"
+                    className="absolute -bottom-70 -z-[1] bg-[#3a1051]"
                     style={{
                         clipPath: "ellipse(50% 60% at 50% 0%)",
                         width: "120%",
@@ -155,7 +157,7 @@ const Intro = () => {
                 ></div>
 
                 <button
-                    className="arrow h-10 w-10 absolute -bottom-40 left-[100vh] cursor-pointer rounded-full flex items-center justify-center"
+                    className="arrow h-10 w-10 absolute -bottom-30  cursor-pointer rounded-full flex items-center justify-center"
                     onClick={() => scrollToSection("Brand")}
                 >
                     {/* Link to #Brand */}
@@ -167,30 +169,30 @@ const Intro = () => {
             {/* Brand Section */}
             <section id="Brand" className="edgeblur mt-[15rem] mb-[6rem]">
                 <div className="w-full flex flex-col justify-center items-center mt-10">
-                    <h1 className="font6 text-[#ffb300] text-[400%]">Top Brands</h1>
-                    <div className="w-15 h-[0.3rem] rounded-full bg-amber-400 mt-2 mb-5"></div>
+                    <h1 className="font6 text-[#ffb300] text-[300%] sm:text-[400%]">Top Brands</h1>
+                    <div className="w-12 sm:w-15 h-[0.2rem] sm:h-[0.3rem] rounded-full bg-amber-400 mt-2 mb-5"></div>
                 </div>
-                <div className="flex flex-row justify-center items-center gap-5 w-10/12 mx-auto">
+                <div className="flex flex-col sm:flex-row justify-between lg:justify-center items-center gap-5 w-10/12 sm:w-11/12 lg:w-10/12 mx-auto">
                     <div
                         ref={elementRef}
-                        className={` temp font4 w-[50%] text-[#3a1051]  !font-[600] ${isVisible ? "visible" : ""
+                        className={` temp font4 w-full sm:w-[60%] md:w-[70%] lg:w-[50%] text-[#3a1051] !font-[600] text-center sm:text-left ${isVisible ? "visible" : ""
                             }`}
                     >
-                        <span className={`tx1`}>Discover</span>
+                        <span className={`tx1 text-[300%] sm:text-[200%] md:text-[300%] lg:text-[400%]`}>Discover</span>
                         <br />
-                        <span className={`tx2`}>wide</span>
+                        <span className={`tx2 text-[300%] sm:text-[200%] md:text-[300%] lg:text-[400%]`}>wide</span>
                         &emsp;
-                        <span className={`tx3`}>range</span>
+                        <span className={`tx3 text-[300%] sm:text-[200%] md:text-[300%] lg:text-[400%]`}>range</span>
                         <br />
-                        <span className={`tx4`}>of</span>
+                        <span className={`tx4 text-[300%] sm:text-[200%] md:text-[300%] lg:text-[400%]`}>of</span>
                         &emsp;
-                        <span className={`tx5`}>Luxury</span>
+                        <span className={`tx5 text-[300%] sm:text-[200%] md:text-[300%] lg:text-[400%]`}>Luxury</span>
                         <br />
-                        <span className={`tx6`}>Brands</span>
+                        <span className={`tx6 text-[300%] sm:text-[200%] md:text-[300%] lg:text-[400%]`}>Brands</span>
                     </div>
                     {/* scrolling products */}
-                    <div className="logoblur w-[40%] h-[30em] relative top-0  overflow-hidden">
-                        <div className="logoscroll w-[100%] grid grid-cols-2 px-10 items-center gap-x-6 place-items-center ">
+                    <div className="logoblur w-full lg:w-[40%] h-[30em] relative top-0  overflow-hidden">
+                        <div className="logoscroll w-[100%] grid grid-cols-2 lg:px-10 items-center gap-x-4 place-items-center ">
                             <img
                                 className="logoimg w-50 h-20"
                                 src="./comp/Alexander-Mcqueen.png"
@@ -338,82 +340,114 @@ const Intro = () => {
 
             {/* footer */}
             <section className="footer lighttxt relative ">
+                {/* Upper Footer */}
                 <div className="w-full bg-[#3a1051] flex justify-center items-center pt-7 pb-4">
-                    <div className="w-10/12 flex flex-row justify-evenly">
-                        <div className="flex flex-col gap-2">
-                            <p className="flex flex-row gap-2">
-                                <img src="./email.png" alt="email" className="w-7 h-6 opacity-80"/>
+                    <div className="w-10/12 flex flex-row flex-wrap gap-y-10 justify-evenly">
+                        {/* Email Part */}
+                        <div className="sm:w-40 lg:w-fit flex flex-col gap-2">
+                            <p className="flex flex-row justify-center items-center gap-2">
+                                <img
+                                    src="./email.png"
+                                    alt="email"
+                                    className="w-7 h-6 opacity-80"
+                                />
                                 Stay updated for New Offers
                             </p>
-                            <div className="flex flex-row gap-2">
-                                <button className="border px-3 py-1 rounded-md hover:bg-[#e7e7fc] hover:text-[#3a1051]">Send</button>
-                                <input type="email" name="email" id="email" className="bg-[#9ccaff38] rounded-sm" />
+                            <div className="flex flex-row sm:flex-col-reverse lg:flex-row gap-2">
+                                <button className="w-20 px-3 py-1 border rounded-md hover:bg-[#e7e7fc] hover:text-[#3a1051] ">
+                                    Send
+                                </button>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    className="bg-[#9ccaff38] rounded-sm px-2 py-1 w-40"
+                                />
                             </div>
                         </div>
-                        <div>
-                            <div className="flex flex-row items-center">
-                                <img src="./mobile-phone.png" alt="mobile-phone"
-                                className="w-8" />
+
+                        {/* Google Play/Apple Store */}
+                        <div className="w-fit sm:w-40 lg:w-fit flex flex-col gap-2">
+                            <div className="flex flex-row items-center justify-center text-center">
+                                <img
+                                    src="./mobile-phone.png"
+                                    alt="mobile-phone"
+                                    className="w-8"
+                                />
                                 <p>Experience the Mobile App</p>
                             </div>
-                            <div className="flex flex-row gap-2">
+                            <div className="flex flex-row sm:flex-col lg:flex-row justify-center items-center gap-1 lg:gap-2">
                                 <Link to={'https://play.google.com/'}>
-                                <img src="./google-play.png" alt="google-play"
-                                className="h-15" /></Link>
+                                    <img
+                                        src="./google-play.png"
+                                        alt="google-play"
+                                        className="h-10"
+                                    />
+                                </Link>
                                 <Link to={'https://apps.apple.com/app/'}>
-                                <img src="./app-store.png" alt="app-store"
-                                className="h-15" /></Link>
+                                    <img src="./app-store.png" alt="app-store" className="h-10" />
+                                </Link>
                             </div>
                         </div>
-                        <div className="flex flex-row gap-2">
+
+                        {/* About Navigation */}
+                        <div className="w-55 sm:w-40 lg:w-55 flex flex-row gap-2">
                             <div>
-                                <img src="info.png" alt="info" className="h-7 opacity-80"/>
+                                <img src="info.png" alt="info" className="h-7 w-13 opacity-80" />
                             </div>
                             <div>
-                                <p>Enjoy Our Royal Service</p>
-                                <p className="">For any doubt visit</p>
-                                <p>our <Link to={'/about'}className="underline text-[#a5a5f8]">About</Link> page</p>
+                                <p>Enjoy Our Royal Service For any doubt visit</p>
+                                <p>
+                                    our{" "}
+                                    <Link to={"/about"} className="underline text-[#a5a5f8]">
+                                        About
+                                    </Link>{" "}
+                                    page
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 {/* columns */}
                 <div className="bg-[#2b0b3d] flex justify-center pt-7 pb-10">
-                    <div className="w-10/12 flex flex-row justify-around">
+                    <div className="w-10/12 grid md:grid-cols-[1.1fr_1fr] lg:grid-cols-[1.5fr_1fr_1fr_1fr] justify-around gap-x-6 gap-y-8 lg:gap-4">
                         {/* line 1 */}
-                        <div className="flex flex-col gap-7">
-                            <div className="flex flex-col">
+                        <div className="flex flex-col gap-2 lg:gap-7 text-center sm:text-left">
+                            <div className="flex flex-col items-center sm:items-baseline">
                                 <div className="flex flex-row items-center gap-2 mb-2">
-                                    <img src="./logo/light-nobg.png" alt="UrbanLUX" 
-                                    className="h-12"/>
-                                    <p className="text-amber-300 font-bold text-3xl font1 text-shadow-[2px_2px_30px]  text-shadow-amber-200">UrbanLUX</p>
+                                    <img
+                                        src="./logo/light-nobg.png"
+                                        alt="UrbanLUX"
+                                        className="h-12"
+                                    />
+                                    <p className="text-amber-300 font-bold text-3xl font1 text-shadow-[2px_2px_30px]  text-shadow-amber-200">
+                                        UrbanLUX
+                                    </p>
                                 </div>
                                 <p>Fashion Yourself With Luxuary</p>
                                 <p>With the Ride of Urban Trend</p>
                             </div>
                             <div className="flex flex-col gap-5">
                                 <p>
-                                UrbanLUX Commerce Limited<br />
-                                Luxuary products for Premium people <br />
-                                Quality goods right from production <br />
-                                Partnered with Top Brands <br />
-                                Why Stay Broke, Have Some Vogue<br />
+                                    UrbanLUX Commerce Limited <br />
+                                    Luxuary products for Premium people <br />
+                                    Quality goods right from production <br />
+                                    Partnered with Top Brands <br />
+                                    Why Stay Broke, Have Some Vogue<br />
                                 </p>
                                 <p>
-                                Infinity Complex, 7th Piller,<br />
-                                Near. rubber Lane, Grand Line,<br />
-                                Opp. Clover Research Park,<br />
-                                Reaper road, Shibuya Town,<br />
-                                The World, East Blue Bay, Ohara<br />
+                                    Infinity Complex, 7th Piller,<br />
+                                    Near. rubber Lane, Grand Line,<br />
+                                    Opp. Clover Research Park,<br />
+                                    Reaper road, Shibuya Town,<br />
+                                    The World, East Blue Bay, Ohara<br />
                                 </p>
                             </div>
-                            
-
                         </div>
 
                         {/* line 2 */}
-                        <div className="flex flex-col gap-7">
+                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-7">
                             <div className="flex flex-col gap-3">
                                 <h3>Get to know us:</h3>
                                 <Link>About UrbanLUX</Link>
@@ -430,11 +464,10 @@ const Intro = () => {
                                 <Link>Help Center</Link>
                                 <Link>Contack Us</Link>
                             </div>
-                            
                         </div>
 
                         {/* line 3 */}
-                        <div className="flex flex-col gap-7">
+                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-7">
                             <div className="flex flex-col gap-3">
                                 <h3>Policies:</h3>
                                 <Link>Privacy Policy</Link>
@@ -450,11 +483,11 @@ const Intro = () => {
                                 <Link>Become an Affiliate</Link>
                                 <Link>Supplier Code of Conduct</Link>
                             </div>
-                            
+
                         </div>
-                        
+
                         {/* line 4 */}
-                        <div className="flex flex-col gap-7">
+                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-7">
                             <div className="flex flex-col gap-3">
                                 <h3>Payment Methods:</h3>
                                 <Link>Credit / Debit Cards</Link>
@@ -466,10 +499,10 @@ const Intro = () => {
                             <div>
                                 <h3>Customer Support:</h3>
                                 <p>Call Us: 1111-1509-1408</p>
-                                <button 
+                                <button
                                     onClick={() => window.location.href = 'mailto:yourmail@domain.com'}
                                     className="cursor-pointer">
-                                        Contact Me
+                                    Contact Me
                                 </button>
                                 <p>Live Chat</p>
                             </div>
@@ -484,7 +517,7 @@ const Intro = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-[#1b0329] py-3 flex flex-col items-center text-[0.7rem] text-[#9d9da5]">
+                <div className="bg-[#1b0329] py-3 px-6 flex flex-col items-center text-[0.7rem] text-[#9d9da5] text-center">
                     <p>&copy; UrbanLUX is Copyright Under my own Imagination Authority</p>
                     <p>Decleration: any or all image or content in this project is not owned by me</p>
                     <p>They are either AI generated or belongs to someone else</p>
