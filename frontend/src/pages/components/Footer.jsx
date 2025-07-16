@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -63,7 +63,6 @@ const Footer = () => {
                             </div>
                             <div>
                                 <p>Enjoy Our Royal Service For any doubt visit</p>
-                                <p></p>
                                 <p>
                                     our{" "}
                                     <Link to={"/about"} className="underline text-[#a5a5f8]">
@@ -80,7 +79,7 @@ const Footer = () => {
                 <div className="bg-[#2b0b3d] flex justify-center pt-7 pb-10">
                     <div className="w-10/12 grid md:grid-cols-[1.1fr_1fr] lg:grid-cols-[1.5fr_1fr_1fr_1fr] justify-around gap-x-6 gap-y-8 lg:gap-4">
                         {/* line 1 */}
-                        <div className="flex flex-col gap-7">
+                        <div className="flex flex-col gap-2 lg:gap-7">
                             <div className="flex flex-col">
                                 <div className="flex flex-row items-center gap-2 mb-2">
                                     <img
@@ -121,7 +120,7 @@ const Footer = () => {
                         </div>
 
                         {/* line 2 */}
-                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-7">
+                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-7">
                             <div className="flex flex-col gap-3">
                                 <h3>Get to know us:</h3>
                                 <Link>About UrbanLUX</Link>
@@ -141,7 +140,7 @@ const Footer = () => {
                         </div>
 
                         {/* line 3 */}
-                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-7">
+                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-7">
                             <div className="flex flex-col gap-3">
                                 <h3>Policies:</h3>
                                 <Link>Privacy Policy</Link>
@@ -160,7 +159,7 @@ const Footer = () => {
                         </div>
 
                         {/* line 4 */}
-                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-7">
+                        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-7">
                             <div className="flex flex-col gap-3">
                                 <h3>Payment Methods:</h3>
                                 <Link>Credit / Debit Cards</Link>
@@ -215,7 +214,7 @@ const Footer = () => {
                 </div>
             </section>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
