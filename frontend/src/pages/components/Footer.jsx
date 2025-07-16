@@ -79,8 +79,8 @@ const Footer = () => {
                 <div className="bg-[#2b0b3d] flex justify-center pt-7 pb-10">
                     <div className="w-10/12 grid md:grid-cols-[1.1fr_1fr] lg:grid-cols-[1.5fr_1fr_1fr_1fr] justify-around gap-x-6 gap-y-8 lg:gap-4">
                         {/* line 1 */}
-                        <div className="flex flex-col gap-2 lg:gap-7">
-                            <div className="flex flex-col">
+                        <div className="flex flex-col gap-2 lg:gap-7 text-center sm:text-left">
+                            <div className="flex flex-col items-center sm:items-baseline">
                                 <div className="flex flex-row items-center gap-2 mb-2">
                                     <img
                                         src="./logo/light-nobg.png"
@@ -206,10 +206,7 @@ const Footer = () => {
                 </div>
                 <div className="bg-[#1b0329] py-3 px-6 flex flex-col items-center text-center text-[0.7rem] text-[#9d9da5]">
                     <p>&copy; UrbanLUX is Copyright Under my own Imagination Authority</p>
-                    <p>
-                        Decleration: any or all image or content in this project is not
-                        owned by me
-                    </p>
+                    <p>Decleration: any or all image or content in this project is not owned by me</p>
                     <p>They are either AI generated or belongs to someone else</p>
                 </div>
             </section>
