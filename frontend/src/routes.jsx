@@ -1,17 +1,16 @@
+import { createBrowserRouter } from 'react-router-dom'
 import Intro from './pages/Intro'
 import Home from './pages/home/Home'
 import About from './pages/Category/AboutUs'
-import Products from './pages/Products/Products'
 import Login from './pages/Auth/Login'
 import Register from './pages/Auth/Register'
-
-import { createBrowserRouter } from 'react-router-dom'
 import Brands from './pages/Category/Brands'
 import Profile from './pages/Profile'
 import PageNotFound from './pages/PageNotFound'
 import Category from './pages/Category/Category'
 import Sale from './pages/Category/Sale'
 import Trending from './pages/Category/Trending'
+import ProductDetail from './pages/Products/ProductDetail'
 
 
 
@@ -34,8 +33,8 @@ const router = createBrowserRouter(
             element: <About />
         },
         {
-            path: "/products",
-            element: <Products />
+            path: "/products/:id",
+            element: <ProductDetail />
         },
         {
             path: "/log-in",

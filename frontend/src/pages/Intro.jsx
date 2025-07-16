@@ -190,7 +190,7 @@ const Intro = () => {
                         <br />
                         <span className={`tx6 text-[300%] sm:text-[200%] md:text-[300%] lg:text-[400%]`}>Brands</span>
                     </div>
-                    {/* scrolling products */}
+                    {/* scrolling Brands */}
                     <div className="logoblur w-full lg:w-[40%] h-[30em] relative top-0  overflow-hidden">
                         <div className="logoscroll w-[100%] grid grid-cols-2 lg:px-10 items-center gap-x-4 place-items-center ">
                             <img
