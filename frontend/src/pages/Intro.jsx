@@ -34,7 +34,7 @@ const Intro = () => {
     };
 
     return (
-        <div className="box-border overflow-hidden">
+        <div className="box-border overflow-x-hidden">
             {/* navbar */}
             <nav className="flex justify-center items-center w-[100vw] bg-[#3a1051]">
                 <div className="flex justify-between items-center w-11/12 h-[12vh]">
