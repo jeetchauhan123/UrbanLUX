@@ -61,8 +61,8 @@ const Intro = () => {
                                 </NavLink>
                             </li>
                             <li className="relative h-full">
-                                <NavLink to="/products">
-                                    <span className="navhovercox py-5">Products</span>
+                                <NavLink to="/product/category">
+                                    <span className="navhovercox py-5">Categories</span>
                                 </NavLink>
                             </li>
                             <li className="relative h-full">
