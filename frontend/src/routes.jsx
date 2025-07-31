@@ -11,7 +11,7 @@ import Category from './pages/Category/Category'
 import Sale from './pages/Category/Sale'
 import Trending from './pages/Category/Trending'
 import ProductDetail from './pages/Products/ProductDetail'
-
+import Zoho from './pages/Zoho'
 
 
 const router = createBrowserRouter(
@@ -63,6 +63,10 @@ const router = createBrowserRouter(
         {
             path: "/product/sales",
             element: <Sale />
+        },
+        {
+            path: "/zoho",
+            element: <Zoho />
         },
         {
             path: "*",
