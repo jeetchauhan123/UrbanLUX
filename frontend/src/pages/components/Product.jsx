@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import axios from "axios";
 
 const Product = () => {
@@ -7,6 +9,7 @@ const Product = () => {
   const [totalPages, setTotalPages] = useState(1);
 
   const productSectionRef = useRef(null);
+  const navigate = useNavigate();
 
   const fetchProducts = async (pageNumber = 1) => {
     try {
@@ -69,6 +72,10 @@ const Product = () => {
 
     return pages;
   };
+  
+  const detailNavigate=(productID)=>{
+    navigate(`/products/${productID}`)
+  }
 
   // useEffect(() => {
   //   axios
@@ -84,10 +91,12 @@ const Product = () => {
   return (
     <div ref={productSectionRef} className="w-11/12 mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+        {/* product card */}
         {products.map((product) => (
           <div
             key={product._id}
-            className="bg-[#d5d5f4] rounded shadow-[0_0_10px_rgba(0,0,0,0.3)] hover:scale-105 transition-transform duration-300"
+            className="bg-[#d5d5f4] rounded shadow-[0_0_10px_rgba(0,0,0,0.3)] hover:scale-105 transition-transform duration-300 cursor-pointer"
+            onClick={() =>detailNavigate(product._id)}
           >
             <img
               src={product.image}

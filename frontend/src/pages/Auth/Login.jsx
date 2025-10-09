@@ -7,7 +7,6 @@ import axios from "axios";
 import "../../styles/Login.css";
 
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -15,11 +14,10 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   const isAuthenticated = useSelector(
     (state) => state.userData.isAuthenticated
   );
-  
+
   const validEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -38,12 +36,15 @@ const Login = () => {
       return;
     }
 
-    try{
-      const res=await axios.post('https://urbanlux.onrender.com/users/login',{
-        email,
-        password,
-      });
-      if(res.data.success){
+    try {
+      const res = await axios.post(
+        "https://urbanlux.onrender.com/users/login",
+        {
+          email,
+          password,
+        }
+      );
+      if (res.data.success) {
         console.log("User Login Successfull", res.data);
         // dispatch(isLogin({ email, password }));
         dispatch(isLogin());
@@ -51,20 +52,16 @@ const Login = () => {
         localStorage.setItem("token", res.data.token);
         setError("");
         navigate("/home");
-      }
-      else{
+      } else {
         alert("login failed");
       }
-    }
-    catch(err){
+    } catch (err) {
       console.error("Error during login:", err);
       if (err.response && err.response.status === 401) {
         setError("Invalid email or password.");
-      }
-      else if (err.response && err.response.status === 404) {
+      } else if (err.response && err.response.status === 404) {
         setError("User not found.");
-      }
-      else {
+      } else {
         setError("Something went wrong. Please try again.");
       }
     }
@@ -77,14 +74,13 @@ const Login = () => {
   }, [isAuthenticated, navigate]);
 
   useEffect(() => {
-    if(error){
-      const timer = setTimeout(()=>{
+    if (error) {
+      const timer = setTimeout(() => {
         setError("");
-      },4000);
+      }, 4000);
       return () => clearTimeout(timer);
     }
-  }, [error])
-  
+  }, [error]);
 
   return (
     <div>
@@ -102,7 +98,7 @@ const Login = () => {
             className="brandlogo z-100 h-20 w-23 sm:h-25 sm:w-28 absolute top-4 right-5 md:left-5 md:right-auto"
           />
         </Link>
-        
+
         <div className="w-[60vw] sm:w-[50vw] md:w-[40vw] h-[100vh] bg-[#3a1051] shadow-[0_0_3rem] shadow-[#3a1051] absolute top-0 left-0 md:left-[15%] z-10 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-center h-10/12 w-10/12">
             <h1 className="text-3xl font-bold text-[#e7e7fc]">Login</h1>
@@ -125,7 +121,7 @@ const Login = () => {
 
               {/* Error message */}
               {error && (
-                <p className="text-red-500 text-sm mb-2 w-10/12 text-left">
+                <p className="text-red-500 text-sm w-full sm:w-10/12 text-left">
                   {error}
                 </p>
               )}

@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, default: mongoose } = require('mongoose');
 
 const UserSchema = new Schema({
     name: {
@@ -13,7 +13,7 @@ const UserSchema = new Schema({
         maxlength: 15,
         default: ''
     },
-    age:{
+    age: {
         type:Number,
         required: false,
         default: 0,
@@ -27,7 +27,9 @@ const UserSchema = new Schema({
     email: {
         type: String,
         required: true,
-        maxlength: 50
+        maxlength: 50,
+        unique: true,
+        lowercase: true,
     },
     password: {
         type: String,
@@ -38,6 +40,29 @@ const UserSchema = new Schema({
         required: false,
         default: 'https://res.cloudinary.com/dgff46mle/image/upload/v1749877596/user2_ucg1zr.png'
     },
+    role: {
+        type: String,
+        required: false,
+        default: 'user'
+    },
+    wishlist: [
+        {
+            type: mongoose.Schema.Types.ObjectId, ref: 'Product'
+        }
+    ],
+    cart: [
+        {
+            product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+            quantity: { type: Number, default: 1, min: 1 },
+        },
+    ],
+    purchaseHistory: [
+        {
+            product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+            quantity: { type: Number, default: 1, min: 1 },
+            purchasedAt: { type: Date, default: Date.now },
+        },
+    ],
     createdAt: {
         type: Date,
         default: Date.now

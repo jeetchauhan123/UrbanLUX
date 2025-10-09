@@ -338,7 +338,7 @@ const Intro = () => {
                 </div>
             </section>
 
-            {/* footer */}
+            {/* Footer */}
             <section className="footer lighttxt relative ">
                 {/* Upper Footer */}
                 <div className="w-full bg-[#3a1051] flex justify-center items-center pt-7 pb-4">

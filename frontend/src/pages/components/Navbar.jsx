@@ -40,6 +40,7 @@ const Navbar = () => {
                 setImageLink({ image: res.data.image });
             } catch (error) {
                 localStorage.removeItem("token");
+                localStorage.removeItem("isAuthenticated");
                 console.error("useeffect error in navbar: ", error);
             }
         };
@@ -209,7 +210,9 @@ const Navbar = () => {
                     <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
                         About
                     </NavLink>
+
                     <hr className="border-white w-full" />
+                    
                     {/* Authentication Buttons */}
                     {!isAuthenticated ? (
                         <button

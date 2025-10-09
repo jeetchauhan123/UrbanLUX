@@ -31,7 +31,7 @@ router.get("/me", authMiddleware, async (req, res) => {
 
 // register 
 router.post('/register', async (req, res) => {
-    const { email, password } = req.body;
+    const { name, phone, age, address, email, password, image} = req.body;
     try {
 
         if (!email || !password) {
@@ -47,7 +47,7 @@ router.post('/register', async (req, res) => {
         }
 
         const hashpassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ email, password: hashpassword });
+        const newUser = new User({ name, phone, age, address, email, password: hashpassword, image });
         await newUser.save();
         
         const token = jwt.sign(
@@ -121,6 +121,7 @@ router.post('/login', async (req, res) => {
     }
 })
 
+// user profile update
 router.patch("/update-profile",authMiddleware, async (req,res)=>{
     try {
         const userId = req.user.id;
@@ -160,6 +161,71 @@ router.post("/upload-photo", authMiddleware, upload.single("photo"), async (req,
     console.error("Upload failed:", error);
     res.status(500).json({ error: "Upload failed" });
   }
+});
+
+
+// Check password
+router.post("/validate-password",authMiddleware, async (req, res)=>{
+    const {email,password}=req.body;
+    try {
+        const user=await User.findOne({ email });
+        const isValid=await bcrypt.compare(password, user.password);
+        if(!isValid){
+            return res.status(401).json({
+                success:false,
+                message:'wrong password',
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: 'Valid Password',
+        })
+    } catch (error) {
+        console.error('Password validation error:', error); // Log the error for debugging
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error', // Generic message for the client
+        });
+    }
+});
+
+router.patch("/change-password", authMiddleware, async (req, res)=>{
+    try{
+        const {newPassword}=req.body;
+        if (!newPassword){
+            return res.status(400).json({
+                success:false,
+                message:"no new password"
+            })
+        }
+
+        const hashpassword=await bcrypt.hash(newPassword, 10);
+
+        const updatedUser=await User.findByIdAndUpdate(
+            req.user.id,
+            {password:hashpassword},
+            {new:true}
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({
+                success:false,
+                message:"user not found",
+            });
+        }
+
+        res.status(200).json({
+            success:true,
+            message: "Password updated successfully",
+        });
+    }
+    catch(error){
+        console.error("Password change error:",error);
+        res.status(500).json({
+            success:false,
+            message: "Internal server error",
+        });
+    }
 });
 
 module.exports = router;

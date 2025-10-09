@@ -13,7 +13,7 @@ const Footer = () => {
                         <div className="sm:w-40 lg:w-fit flex flex-col gap-2">
                             <p className="flex flex-row justify-center items-center gap-2">
                                 <img
-                                    src="./email.png"
+                                    src="/./email.png"
                                     alt="email"
                                     className="w-7 h-6 opacity-80"
                                 />
@@ -36,7 +36,7 @@ const Footer = () => {
                         <div className="w-fit sm:w-40 lg:w-fit flex flex-col gap-2">
                             <div className="flex flex-row items-center justify-center text-center">
                                 <img
-                                    src="./mobile-phone.png"
+                                    src="/./mobile-phone.png"
                                     alt="mobile-phone"
                                     className="w-8"
                                 />
@@ -45,13 +45,13 @@ const Footer = () => {
                             <div className="flex flex-row sm:flex-col lg:flex-row justify-center items-center gap-1 lg:gap-2">
                                 <Link to={"https://play.google.com/"}>
                                     <img
-                                        src="./google-play.png"
+                                        src="/./google-play.png"
                                         alt="google-play"
                                         className="h-10"
                                     />
                                 </Link>
                                 <Link to={"https://apps.apple.com/app/"}>
-                                    <img src="./app-store.png" alt="app-store" className="h-10" />
+                                    <img src="/./app-store.png" alt="app-store" className="h-10" />
                                 </Link>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                         {/* About Navigation */}
                         <div className="w-55 sm:w-40 lg:w-55 flex flex-row gap-2">
                             <div>
-                                <img src="info.png" alt="info" className="h-7 w-13 opacity-80" />
+                                <img src="/info.png" alt="info" className="h-7 w-13 opacity-80" />
                             </div>
                             <div>
                                 <p>Enjoy Our Royal Service For any doubt visit</p>
@@ -83,7 +83,7 @@ const Footer = () => {
                             <div className="flex flex-col items-center sm:items-baseline">
                                 <div className="flex flex-row items-center gap-2 mb-2">
                                     <img
-                                        src="./logo/light-nobg.png"
+                                        src="/./logo/light-nobg.png"
                                         alt="UrbanLUX"
                                         className="h-12"
                                     />
@@ -185,17 +185,17 @@ const Footer = () => {
                                 <h3>Follow Us On:</h3>
                                 <div className="flex flex-row gap-1">
                                     <img
-                                        src="./instagram-color.svg"
+                                        src="/./instagram-color.svg"
                                         alt="instagram-color"
                                         className="w-8"
                                     />
                                     <img
-                                        src="./linkedin-color.svg"
+                                        src="/./linkedin-color.svg"
                                         alt="linkedin-color"
                                         className="w-9"
                                     />
                                     <img
-                                        src="./github-black.svg"
+                                        src="/./github-black.svg"
                                         alt="github-black"
                                         className="w-8"
                                     />
