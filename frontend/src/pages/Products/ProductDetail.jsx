@@ -15,7 +15,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/products/${id}`);
+        const res = await axios.get(`https://urbanlux.onrender.com/products/${id}`);
         setProduct(res.data);
       } catch (err) {
         setError("Failed to fetch product.");
@@ -26,7 +26,7 @@ const ProductDetail = () => {
     const fetchRandom = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/products/random?count=4"
+          "https://urbanlux.onrender.com/products/random?count=4"
         );
         setRandomProducts(res.data || []);
       } catch (err) {
