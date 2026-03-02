@@ -2,6 +2,7 @@ import React from "react";
 import InProgress from "../components/InProgress";
 import Navbar from "../components/Navbar";
 import FilterBar from "../components/FilterBar";
+import Footer from "../components/Footer";
 
 const Trending = () => {
   return (
@@ -13,6 +14,7 @@ const Trending = () => {
           <InProgress />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
