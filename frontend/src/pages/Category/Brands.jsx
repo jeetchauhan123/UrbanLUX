@@ -117,7 +117,7 @@ const Brands = () => {
             <div className="flex gap-2 text-sm">
               <button
                     onClick={() => { setSelectedLetter(null); setQuery(""); }}
-                    className={`px-3 py-1 rounded-full text-sm ${!selectedLetter ? "bg-indigo-600 text-white" : "bg-white/60 text-slate-700"}`}
+                    className={`px-3 py-1 rounded-full text-sm cursor-pointer ${!selectedLetter ? "bg-indigo-600 text-white" : "bg-white/60 text-slate-700"}`}
                   >
                     All
                   </button>
@@ -125,7 +125,7 @@ const Brands = () => {
                 <button
                   key={l}
                   onClick={() => { setSelectedLetter(l); setQuery(""); }}
-                  className={`px-2 py-1 rounded text-xs ${selectedLetter === l ? "bg-indigo-600 text-white" : "bg-white/70 text-slate-700"}`}
+                  className={`px-2 py-1 rounded text-xs cursor-pointer ${selectedLetter === l ? "bg-indigo-600 text-white" : "bg-white/70 text-slate-700"}`}
                 >
                   {l}
                 </button>
