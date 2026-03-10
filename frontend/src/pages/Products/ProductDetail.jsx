@@ -60,10 +60,10 @@ const ProductDetail = () => {
           <h1 className="font-bold text-4xl leading-20">{product.name}</h1>
           <p className="text-xl leading-10">{product.description}</p>
           <p className="text-xl leading-10">
-            <strong>Price:</strong> ₹{product.price}
+            <strong>Price: ₹</strong> {product.price}
           </p>
           <p className="text-xl leading-10">
-            <strong>Category:</strong> {product.category}
+            <strong>Category:</strong>{product.category}
           </p>
           <p className="text-xl leading-10">
             <strong>In Stock:</strong> {product.inStock ? "Yes" : "No"}
